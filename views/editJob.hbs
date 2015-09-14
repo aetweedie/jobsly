@@ -1,0 +1,31 @@
+<div class="head">
+<h1>Jobsly.io</h1>
+<h2>Edit a posting</h2>
+</div>
+<form class="edit-job" action="/jobs/{{_id}}/update" method="post">
+  <label for="jobs">Job Title</label>
+    <input type="text" name="jobs" value="{{jobs}}">
+
+  <label for="companyName">Company Name</label>
+    <input type="text" name="companyName" value="{{companyName}}">
+
+  <label for="jobDesciption">Job Description</label>
+    <input type="text" name="jobDescription" value="{{jobDescription}}">
+
+  <label for="jobResponsibilities">Job Responsibilities</label>
+    <input type="text" name="jobResponsibilities" value="{{jobResponsibilities}}">
+
+  <label for="datePosted">Date Posted</label>
+    <input type="date" name="datePosted" value="{{datePosted}}">
+
+  <label for="positionOpen">Is this position open?</label>
+    <input type="radio" name="isOpen" value="Open" checked="true">Open
+    <input type="radio" name="isOpen" value="Closed">Closed
+  </label>
+
+  <input type="submit" value="Modify this posting">
+</form>
+
+<form class="delete-job" action="/jobs/{{_id}}/delete" method="post">
+  <input type="submit" name="name" value="Delete this job">
+</form>

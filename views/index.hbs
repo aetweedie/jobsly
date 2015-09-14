@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="head">
+<h1>Jobsly.io</h1>
+
+<h2>Current Open Postings</h2>
+
+<a href="/jobs/newJobs" class="new-job-link">Add a new job</a>
+</div>
+
+<div class="postings">
+{{#each jobs}}
+  <h3>{{jobs}}-{{companyName}}</h3> Posted on {{datePosted}}
+  <br>
+  <br>
+  {{jobDescription}}
+  <br>
+  <a class="viewPosting" href="/jobs/{{_id}}">More info on the {{jobs}} position</a>
+  <br>
+  <br>
+{{/each}}
+</div>

@@ -1,0 +1,58 @@
+<div class="head">
+<h1>Jobsly.io</h1>
+</div>
+<div class="show-job">
+{{#jobs}}
+  <h1>{{jobs}} - {{companyName}}</h1>
+  <br>
+  <h3>Job Description</h3>
+  {{jobDescription}}
+  <br>
+  <h3>Job Responsibilities</h3>
+  {{jobResponsibilities}}
+  <br>
+  <h3>This job is</h3>{{isOpen}}
+  <br>
+  <h3>This job was posted on:</h3>{{datePosted}}
+  <br>
+  <h3>List of applicants</h3>
+  <div class="applicants">
+    {{#each applicants}}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Resume</th>
+      </tr>
+      <tr>
+        <td>{{applicantName}}</td>
+        <td>{{applicantEmail}}</td>
+        <td>{{applicantUrl}}</td>
+      </tr>
+    </table>
+  </div>
+    <form class="applicantsShow" action="/jobs/{{../_id}}/applicants/delete" method="post">
+      <input type="submit" value="Withdraw Application"/>
+      <input type="hidden" name="applicant" value="{{this}}">
+    </form>
+
+  {{/each}}
+    <br>
+    <br>
+    <a href="/jobs/{{_id}}/editJob">Modify this job posting</a>
+    <h3>Apply for this job</h3>
+  <form class="applyForm" action="/jobs/{{_id}}/applicants" method="post">
+    <label for="applicantName">Your name</label>
+    <input type="text" name="applicantName" value="">
+
+    <label for="">Your email address</label>
+    <input type="email" name="applicantEmail" value="">
+
+    <label for="applicantUrl">Provide a link to your resume</label>
+    <input type="text" name="applicantUrl" value="">
+
+    <input type="submit" name="name" value="Apply to this job">
+  </form>
+  {{/jobs}}
+  <a href="/">Return to homepage</a>
+</div>

@@ -1,0 +1,42 @@
+{{#if newJobError}}
+  <h1>{{newJobError}}</h1>
+{{/if}}
+
+<div class="head">
+<h1>Jobsly.io</h1>
+
+<h2>Create a new job posting</h2>
+
+</div>
+
+<form class="new-job" action="/" method="post">
+
+  <label for="jobTitle">Job Title</label>
+  <input type="text" name="jobs" value="">
+
+  <label for="companyName">Company Name</label>
+  <input type="text" name="companyName" value="">
+
+  <label for="jobDescription">Job Description</label>
+  <textarea name="jobDescription" rows="8" cols="40"></textarea>
+
+  <label for="jobResponsibilities">Job Responsibilities</label>
+  <textarea name="jobResponsibilities" rows="8" cols="40"></textarea>
+
+  <label for="datePosted">Date this job was posted</label>
+  <input type="date" name="datePosted" value="">
+
+
+  <div class="hidden">
+    <label for="positionOpen">Is this position open?</label>
+    <input type="radio" name="isOpen" value="Open" checked="true">Open
+    <input type="radio" name="isOpen" value="Closed">Closed
+    </label>
+  </div>
+
+
+  <input type="submit" value="Add Job">
+
+</form>
+
+<a href="/">Return to Homepage</a>
